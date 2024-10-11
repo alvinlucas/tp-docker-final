@@ -1,0 +1,13 @@
+1. Crée trois réseaux isolés :
+docker network create mon-reseau1
+docker network create mon-reseau2
+docker network create mon-reseau3
+
+2. Lance un conteneur sur chaque réseau :
+docker run --name conteneur1 --network mon-reseau1 -d nginx
+docker run --name conteneur2 --network mon-reseau2 -d nginx
+docker run --name conteneur3 --network mon-reseau3 -d nginx
+
+3. Teste l'isolation entre les réseaux :
+docker exec -it conteneur1 ping conteneur2  # Cela devrait échouer
+docker exec -it conteneur1 ping conteneur3  # Cela devrait échouer

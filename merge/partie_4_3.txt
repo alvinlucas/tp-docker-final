@@ -1,0 +1,66 @@
+4.3 Exercice : Merge pour diffÃ©rents environnements
+1. CrÃ©er des fichiers pour les environnements dev, test et prod :
+   - CrÃ©e un fichier pour l'environnement de dÃ©veloppement :
+   - Ajoute ce contenu dans le fichier :
+     version: '3.7'
+     services:
+       app:
+         image: nginx
+         environment:
+           - APP_ENV=development
+   - CrÃ©e un fichier pour l'environnement de test :
+   - Ajoute ce contenu dans le fichier :
+     version: '3.7'
+     services:
+       app:
+         image: nginx
+         environment:
+           - APP_ENV=test
+   - CrÃ©e un fichier pour l'environnement de production :
+   - Ajoute ce contenu dans le fichier :
+     version: '3.7'
+     services:
+       app:
+         image: nginx
+         environment:
+           - APP_ENV=production
+2. Utiliser le merge pour dÃ©ployer dans chaque environnement :
+   - Pour l'environnement de dÃ©veloppement :
+     docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d
+   - Pour l'environnement de test :
+     docker-compose -f docker-compose.yml -f docker-compose.test.yml up -d
+   - Pour l'environnement de production :
+     docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d"
+4.3 Exercice : Merge pour différents environnements
+1. Créer des fichiers pour les environnements dev, test et prod :
+   - Crée un fichier pour l'environnement de développement :
+   - Ajoute ce contenu dans le fichier :
+     version: '3.7'
+     services:
+       app:
+         image: nginx
+         environment:
+           - APP_ENV=development
+   - Crée un fichier pour l'environnement de test :
+   - Ajoute ce contenu dans le fichier :
+     version: '3.7'
+     services:
+       app:
+         image: nginx
+         environment:
+           - APP_ENV=test
+   - Crée un fichier pour l'environnement de production :
+   - Ajoute ce contenu dans le fichier :
+     version: '3.7'
+     services:
+       app:
+         image: nginx
+         environment:
+           - APP_ENV=production
+2. Utiliser le merge pour déployer dans chaque environnement :
+   - Pour l'environnement de développement :
+     docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d
+   - Pour l'environnement de test :
+     docker-compose -f docker-compose.yml -f docker-compose.test.yml up -d
+   - Pour l'environnement de production :
+     docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d

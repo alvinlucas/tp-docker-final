@@ -1,0 +1,42 @@
+4.2 Exercice : Merge simple
+1. CrÃ©er un fichier docker-compose.yml de base :
+   - Ouvre PowerShell et crÃ©e le fichier :
+   - Ajoute ce contenu dans le fichier :
+     version: '3.7'
+     services:
+       app:
+         image: nginx
+         ports:
+           - '8080:80'
+2. CrÃ©er un fichier docker-compose.override.yml :
+   - CrÃ©e le fichier d'override :
+   - Ajoute ce contenu dans le fichier :
+     version: '3.7'
+     services:
+       app:
+         environment:
+           - APP_ENV=development
+3. Lancer le conteneur avec les deux fichiers :
+   - ExÃ©cute la commande suivante pour dÃ©marrer le conteneur en utilisant le merge :
+     docker-compose up -d"
+4.2 Exercice : Merge simple
+1. Créer un fichier docker-compose.yml de base :
+   - Ouvre PowerShell et crée le fichier :
+   - Ajoute ce contenu dans le fichier :
+     version: '3.7'
+     services:
+       app:
+         image: nginx
+         ports:
+           - '8080:80'
+2. Créer un fichier docker-compose.override.yml :
+   - Crée le fichier d'override :
+   - Ajoute ce contenu dans le fichier :
+     version: '3.7'
+     services:
+       app:
+         environment:
+           - APP_ENV=development
+3. Lancer le conteneur avec les deux fichiers :
+   - Exécute la commande suivante pour démarrer le conteneur en utilisant le merge :
+     docker-compose up -d

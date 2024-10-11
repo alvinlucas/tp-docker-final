@@ -1,0 +1,23 @@
+1. Initialise un swarm Docker :
+docker swarm init
+
+2. Crée un réseau overlay :
+docker network create -d overlay mon-reseau-overlay
+
+3. Déploie un service utilisant ce réseau :
+Crée un fichier docker-compose-overlay.yml :
+New-Item -Path 'C:/Users/alvin/Documents/Ynov/tp-docker/volumes/docker-compose-overlay.yml' -ItemType File
+
+Ajoute ce contenu dans le fichier :
+version: '3.7'
+services:
+  app:
+    image: nginx
+    networks:
+      - mon-reseau-overlay
+networks:
+  mon-reseau-overlay:
+    external: true
+
+4. Déploie le service avec Docker Compose :
+docker stack deploy -c C:/Users/alvin/Documents/Ynov/tp-docker/volumes/docker-compose-overlay.yml mon-overlay

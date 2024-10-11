@@ -1,0 +1,8 @@
+## Défi : Sauvegarde et restauration de volumes
+1. Dossier pour la sauvegarde créé : C:\Users\alvin\Documents\Ynov\tp-docker\volumes\backup
+
+2. Sauvegarde :
+   docker run --rm --volumes-from mon-nginx-tmpfs -v C:/Users/alvin/Documents/Ynov/tp-docker/volumes/backup:/backup busybox tar czvf /backup/backup.tar.gz /usr/share/nginx/html/index.html
+
+3. Restauration :
+   docker run --rm --volumes-from mon-nginx-tmpfs -v C:/Users/alvin/Documents/Ynov/tp-docker/volumes/backup:/backup busybox sh -c "tar xzvf /backup/backup.tar.gz -C /usr/share/nginx/html"

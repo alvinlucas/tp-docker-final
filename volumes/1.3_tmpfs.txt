@@ -1,0 +1,9 @@
+## Exercice : Volumes tmpfs
+1. Lancement du conteneur :
+   docker run --name mon-nginx-tmpfs -d -p 8081:80 --tmpfs /usr/share/nginx/html nginx
+
+2. Écriture dans le volume tmpfs :
+   docker exec mon-nginx-tmpfs sh -c "echo '<html><body><h1>Hello from tmpfs!</h1></body></html>' > /usr/share/nginx/html/index.html"
+
+3. Vérification du contenu :
+   docker exec mon-nginx-tmpfs cat /usr/share/nginx/html/index.html

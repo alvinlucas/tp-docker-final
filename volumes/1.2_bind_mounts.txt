@@ -1,0 +1,9 @@
+## Exercice : Bind mounts
+1. Fichier HTML créé : index.html
+   - Contenu : <html><body><h1>Hello from bind mounts!</h1></body></html>
+
+2. Commande utilisée :
+   docker run --name mon-nginx -v C:/Users/alvin/Documents/Ynov/tp-docker/volumes/index.html:/usr/share/nginx/html/index.html -d -p 8080:80 nginx
+
+3. Résultat observé :
+   - Modifications en temps réel dans le conteneur.

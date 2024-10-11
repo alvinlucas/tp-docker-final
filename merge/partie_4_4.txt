@@ -1,0 +1,35 @@
+4.4 Défi : Merge complexe
+1. Créer une structure de fichiers Compose permettant de gérer plusieurs services avec des configurations spécifiques par environnement :
+   - Crée un fichier principal docker-compose.yml :
+     - Ajoute ce contenu :
+       version: '3.7'
+       services:
+         web:
+           image: nginx
+           ports:
+             - '8080:80'
+         db:
+           image: postgres
+           environment:
+             POSTGRES_PASSWORD: example
+2. Créer des fichiers d'override spécifiques :
+   - Crée un fichier pour l'environnement de développement :
+   - Ajoute ce contenu :
+     version: '3.7'
+     services:
+       web:
+         environment:
+           - APP_ENV=development
+   - Crée un fichier pour l'environnement de production :
+   - Ajoute ce contenu :
+     version: '3.7'
+     services:
+       web:
+         environment:
+           - APP_ENV=production
+           - APP_SECRET=mysecret
+3. Utiliser le merge pour déployer dans l'environnement souhaité :
+   - Pour l'environnement de développement :
+     docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d
+   - Pour l'environnement de production :
+     docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d

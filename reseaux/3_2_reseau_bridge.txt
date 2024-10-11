@@ -1,0 +1,9 @@
+1. Crée un réseau bridge personnalisé :
+docker network create mon-reseau-bridge
+
+2. Lance deux conteneurs Nginx sur ce réseau :
+docker run --name mon-nginx1 --network mon-reseau-bridge -d nginx
+docker run --name mon-nginx2 --network mon-reseau-bridge -d nginx
+
+3. Teste la communication entre ces conteneurs :
+docker exec -it mon-nginx1 ping mon-nginx2
