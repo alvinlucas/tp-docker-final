@@ -1,4 +1,4 @@
-Pour voir la documentation des etapes se placer dans les dossier
+Pour voir la documentation des etapes se placer dans les dossiers
 
 ﻿# tp-docker-final
 # TP Final Docker Avancé : Volumes, Secrets, Réseaux et Compose
